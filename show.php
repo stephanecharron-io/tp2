@@ -1,15 +1,12 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 require 'ouvrages.php';
 
 use function Ouvrages\{findAll, findById, replace, create, removeById};
 
 require 'utils.php';
 
-use function Utils\{printHeader, printSuccesModif};
+use function Utils\{printHeader, printSuccesModif, printSuccesCreate};
 
 session_start();
 
@@ -43,8 +40,10 @@ if (isset($_GET['id'])) {
     <?php
     printHeader();
 
-    if (isset($_SESSION['succes'])) {
+    if (isset($_SESSION['succesModif'])) {
         printSuccesModif();
+    } elseif (isset($_SESSION['succesCreate'])) {
+        printSuccesCreate();
     }
     ?>
     <main>
@@ -91,11 +90,10 @@ if (isset($_GET['id'])) {
                     </tbody>
                 </table>
                 <div class="buttonWrap">
-                    <form method="post" action="edit.php?id=<?php echo $ouvrage['id'] ?>">
-                        <button>Modifier</button>
-                    </form>
-                    <form method="post" action="delete.php?id=<?php echo $ouvrage['id'] ?>">
-                        <button>Supprimer</button>
+                    <button type="submit"><a href="edit.php?id=<?php echo $ouvrage['id'] ?>">Modifier</a></button>
+                    <form method="post" action="delete.php">
+                        <input type="hidden" name="id" value="<?php echo $ouvrage['id'] ?>"/>
+                        <button type="submit">Supprimer</button>
                     </form>
                 </div>
 

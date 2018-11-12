@@ -157,6 +157,28 @@ function printSuccesModif () {
     echo '</div>';
 }
 
+function printSuccesCreate () {
+
+    echo '<div class="succes">';
+    echo '<ul>';
+    echo '<li>Le nouvel ouvrage a été créé avec succès';
+    echo '</li>';
+    echo '</ul>';
+    echo '</div>';
+}
+
+function printSuccesSupression () {
+
+    echo '<div class="succes">';
+    echo '<ul>';
+    echo '<li>Ouvrage supprimé avec succès';
+    echo '</li>';
+    echo '</ul>';
+    echo '</div>';
+}
+
+
+
 function getFieldErrorClass ($field, $errors){
      return in_array($field, $errors) ? "error" : "";
 }

@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 
 require 'ouvrages.php';
@@ -45,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         replace($ouvrage['id'], $ouvrage);
 
-        $_SESSION["succes"] = true;
+        $_SESSION["succesModif"] = true;
         header("Location: show.php?id=" . $_POST['id'], true, 303);
     }
 } else {

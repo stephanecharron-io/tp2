@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 
 require 'ouvrages.php';
@@ -89,7 +86,7 @@ if (isset($_GET['id'])) {
                         </tr>
                         <tr class="<?php echo getFieldErrorClass('anneeParution', $errors) ?>">
                             <td><label for="anneeParution">année
-                                    parution <?php echo getErrorIndex('anneeParution', $errors) ?></label></td>
+                                    parution <sup>*</sup><?php echo getErrorIndex('anneeParution', $errors) ?></label></td>
                             <td><input type="text" name="anneeParution" id="anneeParution"
                                        value="<?php echo $ouvrage['anneeParution'] ?>"/></td>
                         </tr>
