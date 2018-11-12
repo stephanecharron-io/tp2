@@ -58,7 +58,7 @@ $ouvrages = findAll();
 
             </table>
             <div class="buttonWrap">
-                <button><a href="create.php">Ajouter</a></button>
+                <a href="create.php"><button>Ajouter</button></a>
             </div>
         </section>
     </main>

@@ -90,7 +90,7 @@ if (isset($_GET['id'])) {
                     </tbody>
                 </table>
                 <div class="buttonWrap">
-                    <button type="submit"><a href="edit.php?id=<?php echo $ouvrage['id'] ?>">Modifier</a></button>
+                    <a href="edit.php?id=<?php echo $ouvrage['id'] ?>"><button>Modifier</button></a>
                     <form method="post" action="delete.php">
                         <input type="hidden" name="id" value="<?php echo $ouvrage['id'] ?>"/>
                         <button type="submit">Supprimer</button>
