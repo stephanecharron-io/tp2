@@ -13,12 +13,11 @@ require 'utils.php';
 
 use function Utils\{valider, emptyStringToNull};
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $errors = valider($_POST);
 
-    if (count($errors) > 0 ) {
+    if (count($errors) > 0) {
 
         $_SESSION['anneeParution'] = $_POST['anneeParution'];
         $_SESSION['auteurs'] = $_POST['auteurs'];
@@ -44,17 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ouvrage['supports'] = $_POST['supports'];
         $ouvrage['titre'] = emptyStringToNull($_POST['titre']);
 
-        replace ($ouvrage['id'], $ouvrage);
+        replace($ouvrage['id'], $ouvrage);
 
         $_SESSION["succes"] = true;
         header("Location: show.php?id=" . $_POST['id'], true, 303);
     }
-
-
 } else {
     http_response_code(400);
     echo "400 Bad Request ";
     exit();
 }
-
 ?>

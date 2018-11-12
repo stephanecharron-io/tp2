@@ -21,8 +21,7 @@ if (isset($_GET['id'])) {
 
     $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
 
-    if(sizeof($errors)){
-
+    if (sizeof($errors)) {
         $ouvrage['anneeParution'] = $_SESSION['anneeParution'];
         $ouvrage['auteurs'] = $_SESSION['auteurs'];
         $ouvrage['editeur'] = $_SESSION['editeur'];
@@ -33,7 +32,6 @@ if (isset($_GET['id'])) {
         $ouvrage['supports'] = $_SESSION['supports'];
         $ouvrage['titre'] = $_SESSION['titre'];
     }
-
 }
 ?>
     <!DOCTYPE html>
@@ -65,9 +63,7 @@ if (isset($_GET['id'])) {
 
     <main>
         <section>
-
             <?php if ($ouvrage): ?>
-
                 <h1><?php echo $ouvrageFromGet['titre'] ?></h1>
                 <h2 class="sousTitre"><?php echo $ouvrageFromGet['sousTitre'] ? $ouvrageFromGet['sousTitre'] : '&nbsp;' ?></h2>
                 <form method="post" action="update.php">
@@ -149,8 +145,6 @@ if (isset($_GET['id'])) {
     </body>
     </html>
 <?php
-
 session_unset();
 session_destroy();
-
 ?>

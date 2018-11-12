@@ -46,9 +46,7 @@ if (isset($_GET['id'])) {
     if (isset($_SESSION['succes'])) {
         printSuccesModif();
     }
-
     ?>
-
     <main>
         <section>
 
@@ -92,7 +90,6 @@ if (isset($_GET['id'])) {
                     </tr>
                     </tbody>
                 </table>
-
                 <div class="buttonWrap">
                     <form method="post" action="edit.php?id=<?php echo $ouvrage['id'] ?>">
                         <button>Modifier</button>
@@ -110,7 +107,6 @@ if (isset($_GET['id'])) {
     </body>
     </html>
 <?php
-
 session_unset();
 session_destroy();
 
